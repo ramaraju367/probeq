@@ -9,3 +9,7 @@ urlpatterns = [
 
     path('', include('webapp.urls')),
 ]
+
+admin.site.site_header = "ProbeQ Administrator"
+admin.site.site_title = "CMS Admin"
+admin.site.index_title = " You logged in as SuperUser"

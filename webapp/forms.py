@@ -8,17 +8,17 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.forms.widgets import PasswordInput, TextInput
 
-# register user
+# - Register/Create a user
 
 class CreateUserForm(UserCreationForm):
 
-    class meta:
+    class Meta:
 
         model = User
-        fields = ['username', 'password1', 'passpword2']
+        fields = ['username', 'password1', 'password2']
 
 
-#login user
+# - Login a user
 
 class LoginForm(AuthenticationForm):
 
@@ -26,22 +26,21 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(widget=PasswordInput())
 
 
-# Create a Record
+# - Create a record
 
 class CreateRecordForm(forms.ModelForm):
-    
-        class meta:
 
-            model = Record
-            fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
+    class Meta:
+
+        model = Record
+        fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
 
 
-
-# update a Record
+# - Update a record
 
 class UpdateRecordForm(forms.ModelForm):
-    
-        class meta:
 
-            model = Record
-            fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
+    class Meta:
+
+        model = Record
+        fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
